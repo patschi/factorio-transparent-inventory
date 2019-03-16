@@ -8,7 +8,7 @@ This helps sharing resources with friends without figgling around with temporary
 
 Probably most useful on smaller multiplayer servers with people you trust.
 
-(*) We're not responsible for any item losses.
+(*) I'm not responsible for any item losses when your friend takes something away from you.
 
 ## Features
 
@@ -16,6 +16,7 @@ Probably most useful on smaller multiplayer servers with people you trust.
 - Allowing to change the hotkey to look in other inventories
 - Language support for English and German
 - **Admin**: Ability to deactivate this mod in the mod settings
+- **Admin**: Ability to only allow/disallow for specific users (including [wildcard](#users-list-wildcard) and [Lua regex support for advanced users](#users-list-lua-regex))
 - **Admin**: Ability to turn off messages to inventory owners
 
 ## Requirements
@@ -29,6 +30,28 @@ Probably most useful on smaller multiplayer servers with people you trust.
 - [x] Publish this mod on [mods.factorio.com](https://mods.factorio.com/mod/transparent-inventory)
 - [x] Have at least 1 download on [mods.factorio.com](https://mods.factorio.com/mod/transparent-inventory)
 - [ ] Notice the inventory owner which items got added/removed after inventory was accessed. (including mod setting)
+- [ ] Add custom events for integration of other mods
+
+## Notes
+
+### Users list: Wildcard
+
+Using wildcard is quite simple. You can simple put an asterisk (`*`) wherever you want to. **Notice:** THis is case-insensitive and this is only possible when regex support is *disabled*.
+
+#### Wildcard Examples
+
+- `superg*` matches any username which starts with `super`, like `supergirl`.
+- `*man` matches any username which ends with `man`, like `superman`, `batman` or `spiderman`.
+- `*t*` matches any username which has a `t` in their name. (The same for uppercase `T`, as this is case-insensitive)
+
+### Users list: Lua Regex
+
+Lua Regex is quite special, therefore I strongly recommend doing researches before enabling the regex support in the mod. The regex in Lua is only capable of a tiny subset of features as the PCRE-regex known in other programming languages. You can find a [Lua documentation regarding regex here](https://www.lua.org/pil/20.2.html).
+
+#### Regex Examples
+
+- Not liking usernames which are completely uppercase and sounds like shouting? When enabling `All users, except listed ones` and using `%u+` as regex, everyone can open inventories of other users - except players with just an uppercase username.
+- Quite the same as the sample above: When using `%d+` you can deny usernames which are only consisting out of digits, like `133742`.
 
 ## Credits
 
