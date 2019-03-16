@@ -1,6 +1,7 @@
 # Factorio Mod: Transparent Inventory
 
 ![Thumbnail](https://raw.githubusercontent.com/patschi/factorio-transparent-inventory/master/thumbnail.png "Thumbnail")
+![Mod Settings](https://raw.githubusercontent.com/patschi/factorio-transparent-inventory/master/screenshots/settings_controls.png "Mod Settings")
 
 This is a simple [Factorio](https://www.factorio.com/) mod ([also available on mods.factorio.com](https://mods.factorio.com/mod/transparent-inventory)) which makes all inventories transparent for all players. This way any player is able to **open inventories of other players using ALT + MOUSE-CLICK-1** (*default*), just like admins on multiplayer servers can do. However when this mod is active, **players do not need admin permissions** to be able to do that and additionally the owner is informed (*enabled by default*) when somewhen opens his personal inventory.
 
@@ -34,9 +35,13 @@ Probably most useful on smaller multiplayer servers with people you trust.
 
 ## Notes
 
+### Factorio Mods
+
+The mod is also available on the [official Factorio mods portal here]([mods.factorio.com](https://mods.factorio.com/mod/transparent-inventory)).
+
 ### Users list: Wildcard
 
-Using wildcard is quite simple. You can simple put an asterisk (`*`) wherever you want to. **Notice:** THis is case-insensitive and this is only possible when regex support is *disabled*.
+Using wildcard is quite simple. You can simple put an asterisk (`*`) wherever you want to. **Notice:** This is case-insensitive and this is only possible when regex support is *disabled*.
 
 #### Wildcard Examples
 
