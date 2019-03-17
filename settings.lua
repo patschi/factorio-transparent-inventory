@@ -8,7 +8,7 @@ data:extend({
 	},
 	{ -- Setting for admins if users should be able to decide about inventory access
 		type = "bool-setting",
-		name = "tinv-user-democracy",
+		name = "tinv-user-inv-democracy",
 		setting_type = "runtime-global",
 		default_value = true,
 		order = "tinv-setting-15",
