@@ -17,3 +17,5 @@ git tag --force "v${INFO_VERSION}"
 # making a zip
 echo "Creating ZIP archive..."
 git archive --format=zip --prefix "${FOLDER_NAME}/" -o "${FOLDER_NAME}.zip" "v${INFO_VERSION}"
+
+echo "Done."
