@@ -18,19 +18,21 @@ INFO_VERSION=$(echo $INFO_JSON | jq --raw-output '.version')
 FOLDER_NAME=${INFO_NAME}_${INFO_VERSION}
 
 # Let's create a git tag for this release
-echo "Tagging release 'v${INFO_VERSION}'..."
-git tag --annotate --force "v${INFO_VERSION}"
+echo "* Tagging release 'v${INFO_VERSION}'..."
+git tag --force --annotate "v${INFO_VERSION}" --message "${INFO_TITLE} v${INFO_VERSION} released."
 
 # making a zip
-echo "Creating ZIP archive..."
+echo "* Creating ZIP archive..."
 git archive --format=zip --prefix "${FOLDER_NAME}/" -o "${FOLDER_NAME}.zip" "v${INFO_VERSION}"
 
 # check if release mode.
 if [ "$MODE" == "release" ]; then
+	echo "* Updating git..."
 	echo "Pushing git..."
 	git push --all
+	echo "Pushing tags..."
 	git push --tags --force
-	echo "Release 'v${INFO_VERSION}' done."
+	echo "Release 'v${INFO_VERSION}' done!"
 else
-	echo "Release archive for 'v${INFO_VERSION}' created.."
+	echo "Release archive for 'v${INFO_VERSION}' created!"
 fi
