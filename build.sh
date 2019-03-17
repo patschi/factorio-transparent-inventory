@@ -4,8 +4,8 @@ MODE=$1
 # check dirty state.
 if ! git diff --no-ext-diff --quiet --exit-code; then
 	echo "We're in a dirty state. There are uncommitted changes. Please check!"
-	echo "Sleeping for 5 seconds before proceeding..."
-	sleep 5
+	echo "Sleeping for 10 seconds before proceeding..."
+	sleep 10
 fi
 
 # parse info details

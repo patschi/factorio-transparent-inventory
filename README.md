@@ -14,10 +14,12 @@ Probably most useful on smaller multiplayer servers with people you trust.
 ## Features
 
 - Open inventories of all players, without admin permissions
+- Ability for players to decide if they allow access to their inventory from other players
 - Allowing to change the hotkey to look in other inventories
 - Language support for English and German
 - **Admin**: Ability to deactivate this mod in the mod settings
-- **Admin**: Ability to only allow/disallow for specific users (including [wildcard](#users-list-wildcard) and [Lua regex support for advanced users](#users-list-lua-regex))
+- **Admin**: Ability to control access for specific users (including [wildcard](#users-list-wildcard) and [Lua regex support for advanced users](#users-list-lua-regex))
+- **Admin**: Ability to control whether users can allow access to their inventory. This can be globally overwritten.
 - **Admin**: Ability to turn off messages to inventory owners
 
 ## Requirements
