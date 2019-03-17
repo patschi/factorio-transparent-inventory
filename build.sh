@@ -16,11 +16,10 @@ INFO_TITLE=$(echo $INFO_JSON | jq --raw-output '.title')
 INFO_VERSION=$(echo $INFO_JSON | jq --raw-output '.version')
 
 FOLDER_NAME=${INFO_NAME}_${INFO_VERSION}
-BUILD_DIR=/tmp/FACTORIO_MOD_${FOLDER_NAME}/
 
 # Let's create a git tag for this release
-echo "Tagging release..."
-git tag --force "v${INFO_VERSION}"
+echo "Tagging release 'v${INFO_VERSION}'..."
+git tag --annotate --force "v${INFO_VERSION}"
 
 # making a zip
 echo "Creating ZIP archive..."
@@ -30,7 +29,8 @@ git archive --format=zip --prefix "${FOLDER_NAME}/" -o "${FOLDER_NAME}.zip" "v${
 if [ "$MODE" == "release" ]; then
 	echo "Pushing git..."
 	git push --all
-	git push --tags
+	git push --tags --force
+	echo "Release 'v${INFO_VERSION}' done."
+else
+	echo "Release archive for 'v${INFO_VERSION}' created.."
 fi
-
-echo "Done."

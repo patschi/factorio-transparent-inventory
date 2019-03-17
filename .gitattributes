@@ -1,5 +1,7 @@
+# Force specific line-endings for given files
 *.sh text eol=lf
 
+# Keep this files out of generated ZIPs by "git archive"
 /screenshots export-ignore
 .gitattributes export-ignore
 README.md export-ignore
