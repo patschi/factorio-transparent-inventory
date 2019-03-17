@@ -21,25 +21,32 @@ function stalking_player_inventory(event)
 		local colors = { -- A few colors we use later on
 			red    = {r = 1};
 			green  = {g = 1};
+			blue   = {r = 30, g = 144, b = 255};
 			orange = {r = 255, g = 99, b = 71};
 		}
 
 		-- selected.player might be nil when being in "god mode" (where the character is detached from LuaPlayer)
-		-- Check must be last to actually not crash when trying to open inventory of any other entity than a player
+		-- This check must be as the last one to not crash when trying to open inventory of any other entity than a player (e.g. building)
 		-- Check that target is not empty and is actually a player
 		if selected ~= nil and selected.type == "player" and selected.player ~= nil then
 			-- Everything is fine... so proceed...
 			local selected_player = selected.player -- "selected" is just LuaEntity, therefore we use player property to get LuaPlayer class
-			-- Check if player is allowed to open inventory of someone
+			-- Check if player is allowed to open inventory of someone based on admin-side settings
 			if tinv_is_allowed_to_stalk(player) then
-				serverLog(player.name .. " is looking in the inventory of player " .. selected_player.name)
-				if settings.global["tinv-tell-stalker"].value then -- Check if we tell selected player that player is stalking him
-					selected_player.print({'message.target-is-stalking-player', player.name}, colors.orange) -- Write selected player that someone is stalking him now
+				-- Check if selected player allowed access to his inventory, and if the setting should be honored based on the admin-setting
+				if not settings.global["tinv-user-inv-democracy"].value or (settings.global["tinv-user-inv-democracy"].value and selected_player.mod_settings["tinv-user-control-access"].value) then
+					serverLog(player.name .. " is looking in the inventory of player " .. selected_player.name)
+					if settings.global["tinv-tell-stalker"].value then -- Check if we tell selected player that player is stalking him
+						selected_player.print({'message.target-is-stalking-player', player.name}, colors.orange) -- Write selected player that someone is stalking him now
+					end
+					player.print({'message.player-stalking-now', selected_player.name}, colors.green) -- Write current player
+					player.opened = selected_player -- Force the player to open LuaPlayer (which causes the inventory to open)
+				else -- User disallowed access to his inventory due to user-settings
+					serverLog(player.name .. " tried looking in the inventory of player " .. selected_player.name .. " but was denied by target user settings.")
+					player.print({'message.player-stalking-by-target-not-allowed', selected_player.name}, colors.blue) -- Tell the player that the target player does not allow that
 				end
-				player.print({'message.player-stalking-now', selected_player.name}, colors.green) -- Write current player
-				player.opened = selected_player -- Force the player to open LuaPlayer (which causes the inventory to open)
 			else -- Apparently not...
-				serverLog(player.name .. " tried looking in the inventory of player " .. selected_player.name .. " but was denied.")
+				serverLog(player.name .. " tried looking in the inventory of player " .. selected_player.name .. " but was denied due to server-side permissions.")
 				player.print({'message.player-stalking-not-allowed'}, colors.red) -- Tell the player that he's not allowed to stalk
 			end
 		else -- ...or not...
