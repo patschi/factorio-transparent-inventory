@@ -6,6 +6,13 @@ data:extend({
 		default_value = true,
 		order = "tinv-setting-10",
 	},
+	{ -- Setting for admins if users should be able to decide about inventory access
+		type = "bool-setting",
+		name = "tinv-user-democracy",
+		setting_type = "runtime-global",
+		default_value = true,
+		order = "tinv-setting-15",
+	},
 	{ -- If we should tell the owner of the inventory something
 		type = "bool-setting",
 		name = "tinv-tell-stalker",
@@ -35,5 +42,12 @@ data:extend({
 		default_value = "",
 		allow_blank = true,
 		order = "tinv-setting-45",
+	},
+	{ -- If other users should be able to access the inventory of the user
+		type = "bool-setting",
+		name = "tinv-user-control-access",
+		setting_type = "runtime-per-user",
+		default_value = true,
+		order = "tinv-setting-user-10",
 	},
 })
