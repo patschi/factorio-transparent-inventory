@@ -5,7 +5,10 @@ end)
 
 -- Listener when someone presses the hotkey
 script.on_event("tinv-open", function(event) -- When defined shortcut was called...
-	stalking_player_inventory(event) -- ...then we call our function just right below.
+	-- Only do something when we're in a multiplayer
+	if game.is_multiplayer() then
+		stalking_player_inventory(event) -- ...then we call our function just right below.
+	end
 end)
 
 -- Main function
