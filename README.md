@@ -36,9 +36,10 @@ Probably most useful on smaller multiplayer servers with people you trust.
 
 ## Notes
 
-### Factorio Mods
+### Factorio Forum/Mods
 
-The mod is also available on the [official Factorio mods portal here]([mods.factorio.com](https://mods.factorio.com/mod/transparent-inventory)).
+- Mod is available on the [official Factorio mods portal here]([mods.factorio.com](https://mods.factorio.com/mod/transparent-inventory)).
+- Discussion forum thread available [in the official Factorio forum here](https://forums.factorio.com/viewtopic.php?f=190&t=67935).
 
 ### Users list: Wildcard
 

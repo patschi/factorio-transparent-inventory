@@ -1,4 +1,8 @@
 #!/bin/bash
+#
+# Requirements:
+# $ apt install git jq
+#
 MODE=$1
 
 # check dirty state.
