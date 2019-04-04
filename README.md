@@ -47,7 +47,7 @@ Using wildcard is quite simple. You can simple put an asterisk (`*`) wherever yo
 
 #### Wildcard Examples
 
-- `superg*` matches any username which starts with `super`, like `supergirl`.
+- `superg*` matches any username which starts with `superg`, like `supergirl`.
 - `*man` matches any username which ends with `man`, like `superman`, `batman` or `spiderman`.
 - `*t*` matches any username which has a `t` in their name. (The same for uppercase `T`, as this is case-insensitive)
 
