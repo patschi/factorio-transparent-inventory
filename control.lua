@@ -31,7 +31,8 @@ function stalking_player_inventory(event)
 		-- selected.player might be nil when being in "god mode" (where the character is detached from LuaPlayer)
 		-- This check must be as the last one to not crash when trying to open inventory of any other entity than a player (e.g. building)
 		-- Check that target is not empty and is actually a player
-		if selected ~= nil and selected.type == "player" and selected.player ~= nil then
+		-- Notice: player.type was renamed from 'player' to 'character' in 0.17.35 (https://wiki.factorio.com/Version_history/0.17.0)
+		if selected ~= nil and selected.type == "character" and selected.player ~= nil then
 			-- Everything is fine... so proceed...
 			local selected_player = selected.player -- "selected" is just LuaEntity, therefore we use player property to get LuaPlayer class
 			-- Check if player is allowed to open inventory of someone based on admin-side settings

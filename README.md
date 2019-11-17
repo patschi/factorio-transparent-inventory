@@ -24,7 +24,7 @@ Probably most useful on smaller multiplayer servers with people you trust.
 
 ## Requirements
 
-- Factorio multiplayer server running 0.17 and later
+- Factorio multiplayer server running 0.17 or later
 - More than one active player to have inventories to look into
 
 ## Roadmap/Ideas
