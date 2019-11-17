@@ -3,6 +3,9 @@
 # Requirements:
 # $ apt install git jq
 #
+if ! which jq; then echo "Command jq not found. Install it."; exit 1; fi
+if ! which git; then echo "Command git not found. Install it."; exit 1; fi
+
 MODE=$1
 
 # check dirty state.
