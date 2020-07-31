@@ -24,7 +24,7 @@ Probably most useful on smaller multiplayer servers with people you trust.
 
 ## Requirements
 
-- Factorio multiplayer server running 0.17 or later
+- Factorio multiplayer server running 0.17.x or 0.18.x (check [mods.factorio.com](https://mods.factorio.com/mod/transparent-inventory) for more details)
 - More than one active player to have inventories to look into
 
 ## Roadmap/Ideas
@@ -35,6 +35,11 @@ Probably most useful on smaller multiplayer servers with people you trust.
 - [ ] Add custom events for integration of other mods
 
 ## Notes
+
+### General
+
+- Readable changelog available within the [CHANGELOG.md](https://github.com/patschi/factorio-transparent-inventory/blob/master/CHANGELOG.md) file.
+- Releases and their hashes can be found at [Releases](https://github.com/patschi/factorio-transparent-inventory/releases) on GitHub.
 
 ### Factorio Forum/Mods
 
