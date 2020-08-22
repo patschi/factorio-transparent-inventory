@@ -2,6 +2,10 @@
 
 Detailed changes available at the [GitHub repository](https://github.com/patschi/factorio-transparent-inventory/commits/master). Releases and their hashes can be found at [Releases](https://github.com/patschi/factorio-transparent-inventory/releases).
 
+- 2020-08-22 (**[v1.0.0](https://github.com/patschi/factorio-transparent-inventory/releases/tag/v1.0.0)**)
+  - Note: This version is ONLY compatible with 1.0. For earlier releases, use a previous mod release.
+  - Tweak: Marked mod compatible with [1.0](https://wiki.factorio.com/Version_history/1.0.0) and later.
+
 - 2020-07-31 (**[v0.5.0](https://github.com/patschi/factorio-transparent-inventory/releases/tag/v0.5.0)**)
   - Note: This version is ONLY compatible with 0.18. For 0.17 use a previous release.
   - Tweak: Marked mod compatible with [0.18](https://wiki.factorio.com/Version_history/0.18.0) and later - only tested 0.8.38 myself.
