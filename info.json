@@ -1,11 +1,11 @@
 {
 	"name": "transparent-inventory",
-	"version": "1.0.0",
+	"version": "1.0.1",
 	"title": "Transparent Inventories",
 	"author": "Patrik Kernstock",
 	"contact": "patrik+factorio@kernstock.net",
 	"homepage": "https://github.com/patschi/factorio-transparent-inventory",
 	"description": "Nobody has something to hide in their inventories, right? For less inventory-privacy: Transparent Inventories! Simply ALT + MOUSE-CLICK-1 (default, can be configured) on any other player to open his inventory - without admin permissions. Boost productivity by sharing resources the easy way!",
-	"factorio_version": "1.0",
+	"factorio_version": "1.1",
 	"dependencies": [ "base >= 1.0" ]
 }
